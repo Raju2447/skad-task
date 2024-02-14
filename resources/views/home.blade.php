@@ -59,9 +59,8 @@
 
                                   
                                     <td>
-    <button onclick="shareViaEmail({{ $votingPool->id }})" class="btn btn-sm btn-info">{{ __('Share via Email') }}</button>
+    <button onclick="$('#emailModal').modal('show')" class="btn btn-sm btn-info">{{ __('Share via Email') }}</button>
 </td>
-
 
 
 <td>
@@ -107,7 +106,7 @@
 
 
 <script>
-    function shareViaEmail(votingPoolId) {
+    function sendEmail(votingPoolId) {
         var recipient = document.getElementById('recipientEmail').value;
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  
         if (!emailRegex.test(recipient)) {
@@ -120,8 +119,6 @@
         $('#emailModal').modal('hide');
     }
 </script>
-
-
 
 
 @endsection
